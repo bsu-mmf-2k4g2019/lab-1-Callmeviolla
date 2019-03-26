@@ -34,8 +34,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::btn_slot()
 {
+    if((ui->disp->text()).toDouble() == 0)
+        ui->disp->clear();
     QPushButton *btn = (QPushButton *)sender();
     res = ui->disp->text() + btn->text();
+    ui->disp->setText(res);
 }
 
 void MainWindow::on_btn_ac_clicked()
